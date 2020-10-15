@@ -26,6 +26,22 @@ sigla de ECMAScript
 yarn add ts-node-dev -D
 ```
 
+### > Inclusão de scripts personalizados no arquivo `package.json`  
+> utilizado para executar scripts personalizados dentro da aplicação
+```json
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts"
+  },
+```
+> Inclusão de flags no arquivo de configuração `package.json`
+`--transpile-only` --> inibir os avisos de erro no código.
+`--ignore-watch node_modeles` --> ignorar as mudanças que ocorrerem na pasta "node_modules"
+
+### > Executar o script para rodar a aplicação
+```ps1
+yarn dev
+```
+
 > Executar o NODE
 ```
 node scr/server.ts
