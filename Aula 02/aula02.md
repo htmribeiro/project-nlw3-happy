@@ -1,3 +1,18 @@
+## 2º Dia: Back-end com Node.js
+
+- [x] Criando projeto com Node.js
+- [ ] Rotas, parâmetros e métodos HTTP
+- [ ] Configurando banco de dados
+- [ ] Criando tabelas no banco
+- [ ] Criando orfanato sem imagem
+- [ ] Abstraindo em controller
+- [ ] Listando orfanatos
+- [ ] Upload de imagens
+- [ ] Trabalhando com views
+- [ ] Detalhe do orfanato
+- [ ] Lidando com excessões
+- [ ] Validação de dados
+
 > Comando para gerar o arquivo `package.json` de configuração do ambiente.
 ```ps1
 yarn init -y
@@ -34,7 +49,7 @@ yarn add ts-node-dev -D
   },
 ```
 > Inclusão de flags no arquivo de configuração `package.json`
-`--transpile-only` --> inibir os avisos de erro no código.
+`--transpile-only` --> inibir as verificações das bibliotecas para avisos de erro no código.
 `--ignore-watch node_modeles` --> ignorar as mudanças que ocorrerem na pasta "node_modules"
 
 ### > Executar o script para rodar a aplicação
