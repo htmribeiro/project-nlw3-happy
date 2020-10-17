@@ -1,7 +1,7 @@
 ## 2º Dia: Back-end com Node.js
 
 - [x] Criando projeto com Node.js
-- [ ] Rotas, parâmetros e métodos HTTP
+- [x] Rotas, parâmetros e métodos HTTP
 - [ ] Configurando banco de dados
 - [ ] Criando tabelas no banco
 - [ ] Criando orfanato sem imagem
@@ -61,3 +61,36 @@ yarn dev
 ```
 node scr/server.ts
 ```
+
+```ts
+import express from 'express';
+
+const app = express(); //criação da aplicação
+
+app.use(express.json()); // É como se estivesse aplicando um plugin no app
+
+// Criaçao da Rota
+// Recurso = users
+// Método HTTP = GET, POST, PUT, DELETE
+
+// GET = Buscar uma informação (Lista, Item)
+// POST = Criando uma informação
+// PUT = Editando uma informação
+// DELETE = Deletando uma informação
+
+// Parâmetros
+// Query Params: http://localhost:3333/users?search=diego
+// Route Params: http://localhost:3333/users/1 (identificar um recurso)
+// Body: http://localhost:3333/users (identificar um recurso)
+
+app.post('/users/:id', (request, response) => {
+    console.log(request.query);
+    console.log(request.params);
+    console.log(request.body); // É preciso iniciar uma função json do express
+
+    return response.json({ message: 'Hello World'  });
+});
+
+app.listen(3333); // localhost:3333
+```
+
