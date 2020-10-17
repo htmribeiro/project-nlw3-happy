@@ -13,9 +13,12 @@ const app = express(); //criação da aplicação
 
 // Parâmetros
 // Query Params: http://localhost:3333/users?search=diego
-// Route Params: 
+// Route Params: DELETE http://localhost:3333/users/1 (identificar um recurso)
+// Body: http://localhost:3333/users (identificar um recurso)
 
-app.get('/users', (request, response) => {
+app.post('/users', (request, response) => {
+    console.log(request.query)
+    
     return response.json({ message: 'Hello World'  });
 });
 
