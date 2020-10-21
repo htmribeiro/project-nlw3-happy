@@ -225,3 +225,32 @@ await queryRunner.dropTable('orphanages');
 ```ps1
 yarn typeorm migrations:run
 ```
+> Comando para que a migration faça o rollback da tabela no banco de dados
+```ps1
+yarn typeorm migrations:revert
+```
+
+### Utilizando o `Beekeeper Studio` como gerenciador do banco de dados
+1. Connection type
+    - Selecionar a opção: SQLite
+2. Database file
+    - Selecionamos o caminho da base
+    - C:\VMShared\repoCode\rocketseat\project-nlw3-happy\backend\src\database\database.sqlite
+3. Save Connection
+    - Salvamos essa conexão nomeando-a
+4. Clicamos no botão **Connect**, para iniciarmos a conexão com o banco
+
+## Criando orfanato sem imagem
+
+> Para cada tabela no banco de dados, teremos um `model`.
+- `model` --> É uma representação daquela tabela como uma **classe** dentro do código
+
+> ./src/models
+- Criaremos o primeiro **model** chamado `Orphanages`.
+  - Obs: Por se tratar de uma classe JavaScript os tipos primitivos informados serão nativas do JavaScript e não como declarados na *migration* para a criação do banco de dados
+
+> Após a criaçao da classe, deveremos integrá-la com o `typeorm`
+
+1. Alteração no arquivo ***tsconfig.json***
+  - `"strictPropertyInitialization"` - deveremos alterá-la para **false**
+  - Com isso não precisaremos colocar nenhum tipo de inicialização ou contrutures nas variáveis da classe
